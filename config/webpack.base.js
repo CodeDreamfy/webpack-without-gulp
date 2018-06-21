@@ -3,18 +3,21 @@ const webpack = require("webpack");
 const resolve = path.resolve;
 
 const entry = {
-  app: "./src/main.js",
+  main: "./src/main.js",
   vendors: ["jquery", "swiper"]
 };
 const output = {
-  filename: "js/[name].[hash:7].js",
-  path: resolve(__dirname, "../dist")
+  path: resolve(__dirname, "dist"),
+  filename: "js/[name].js"
+  // publicPath: "./"
+  // publicPath: process.env.NODE_ENV === "production" ? "/src/public" : "./"
 };
 const resolver = {
   modules: [
-    resolve(__dirname, "../node_modukes"), // 优先查找，提升速度
+    resolve(__dirname, "../node_modules"), // 优先查找，提升速度
     "node_modules"
   ],
+  extensions: [".js", ".css"],
   alias: {
     "@": resolve("src")
   }
@@ -32,6 +35,14 @@ const rules = [
     ]
   },
   {
+    test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+    loader: "url-loader",
+    options: {
+      limit: 5000,
+      name: resolve(__dirname, "assets/[name].[hash:7].[ext]")
+    }
+  },
+  {
     test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
     loader: "url-loader",
     options: {
@@ -42,15 +53,11 @@ const rules = [
 ];
 const plugins = [
   new webpack.DefinePlugin({
-    // webpack 内置的插件
-    // 用于创建一些在编译时可以配置的全局常量,常量的值我们可以在 webpack 的配置
-    // "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
+    "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
   }),
   new webpack.ProvidePlugin({
-    // webpack 内置的插件
-    // 自动加载模块，而不必到处 import 或 require
     $: "jquery",
-    jQuery: "jquery"
+    Swiper: "swiper"
   })
 ];
 

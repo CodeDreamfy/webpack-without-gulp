@@ -5,3 +5,7 @@ Todo:
     ☐ css处理-主要是使用postcss相关插件
     ☐ 图片处理-小图片base64，大图片压缩
     ☐ 区分开发与生产 - 前缀
+
+
+notes:
+  `使用webpack4.0的时候extract-text-webpack-plugin应该使用@next版本`
