@@ -1,0 +1,19 @@
+/* common */
+body {
+  width: 100vw; height: 100vh;
+  background: #0a0c0d;
+  color: #fff;
+}
+.wrapper {
+  height: 100%; width: 100%; position: relative;
+   .swiper-container {
+    height: 100%;  width: 100%;
+    & > .swiper-wrapper {
+      height: 100%;  width: 100%;
+      & > .swiper-slide {
+        height: 100%; position: relative;
+        overflow: hidden;
+      }
+    }
+  }
+}
