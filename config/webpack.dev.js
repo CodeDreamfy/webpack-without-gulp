@@ -40,7 +40,7 @@ module.exports = function(env) {
     new webpack.NamedModulesPlugin(), // 用于启动 HMR 时可以显示模块的相对路径
     new webpack.HotModuleReplacementPlugin() // Hot Module Replacement插件
   ];
-  const config = smart(base, {
+  return smart(base, {
     output,
     module: { rules },
     devServer,
