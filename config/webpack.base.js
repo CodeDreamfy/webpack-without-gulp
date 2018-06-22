@@ -36,6 +36,7 @@ const plugins = [
   new webpack.ProvidePlugin({
     // identifier: ["module", "default"],
     $: "jquery",
+    jQuery: "jquery",
     Swiper: ["swiper", "default"]
   }),
   new HtmlWebpackPlugin({

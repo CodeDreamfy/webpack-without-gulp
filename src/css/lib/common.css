@@ -8,7 +8,6 @@ body {
   height: 100%; width: 100%; position: relative;
    .swiper-container {
     height: 100%;  width: 100%;
-    background: url(../assets/fengmian.png) no-repeat;
     background-size: 750px 1334px;
     & > .swiper-wrapper {
       height: 100%;  width: 100%;
@@ -17,5 +16,11 @@ body {
         overflow: hidden;
       }
     }
+  }
+  .arrow {
+    width: 40px; height: 33px;
+    position: absolute; bottom: 56px; left: 50%; margin-left: -20px;
+    background: url(../assets/arrow.png) no-repeat;
+    background-size: 40px 33px; z-index: 9;
   }
 }

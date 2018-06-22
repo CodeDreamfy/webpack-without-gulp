@@ -1,6 +1,7 @@
+import oSlide2 from "./module/slide2";
 $(function() {
   const globalSwiper = new Swiper("#globalSwiper", {
     direction: "vertical"
   });
-  console.log("that`s right");
+  oSlide2.mounted();
 });
