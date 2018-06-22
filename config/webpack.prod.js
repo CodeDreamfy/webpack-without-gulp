@@ -16,6 +16,19 @@ module.exports = function(env) {
   };
   const rules = [
     {
+      test: /\.html$/,
+      include: [resolve(__dirname, "../src")],
+      use: [
+        {
+          loader: "html-loader",
+          options: {
+            attrs: ["img:src", "video:src"],
+            root: path.resolve(__dirname, assetsPath + "/assets")
+          }
+        }
+      ]
+    },
+    {
       test: /\.css$/,
       include: [resolve(__dirname, "../src/css")],
       use: ExtractTextPlugin.extract({

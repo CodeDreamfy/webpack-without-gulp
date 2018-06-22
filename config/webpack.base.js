@@ -34,8 +34,9 @@ const plugins = [
     "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
   }),
   new webpack.ProvidePlugin({
+    // identifier: ["module", "default"],
     $: "jquery",
-    Swiper: "swiper"
+    Swiper: ["swiper", "default"]
   }),
   new HtmlWebpackPlugin({
     filename: "index.html",

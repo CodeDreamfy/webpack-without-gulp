@@ -7,10 +7,21 @@ const resolve = path.resolve;
 module.exports = function(env) {
   const output = {
     path: resolve(__dirname, "../dist"),
-    filename: "js/[name].[hash:7].js",
-    publicPath: "./"
+    filename: "js/[name].[hash:7].js"
   };
   const rules = [
+    {
+      test: /\.html$/,
+      include: [resolve(__dirname, "../src")],
+      use: [
+        {
+          loader: "html-loader",
+          options: {
+            attrs: ["img:src", "video:src"]
+          }
+        }
+      ]
+    },
     {
       test: /\.css$/,
       include: [resolve(__dirname, "../src/css")],
@@ -40,10 +51,11 @@ module.exports = function(env) {
     new webpack.NamedModulesPlugin(), // 用于启动 HMR 时可以显示模块的相对路径
     new webpack.HotModuleReplacementPlugin() // Hot Module Replacement插件
   ];
-  return smart(base, {
+  const config = smart(base, {
     output,
     module: { rules },
-    devServer,
-    plugins
+    devServer
   });
+  config.plugins.push(...plugins);
+  return config;
 };
