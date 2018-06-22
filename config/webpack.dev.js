@@ -1,33 +1,49 @@
 const { smart } = require("webpack-merge");
 const webpack = require("webpack");
 const base = require("./webpack.base");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const resolve = path.resolve;
 
-const rules = [
-  {
-    test: /\.css$/,
-    include: [resolve(__dirname, "../src/css")],
-    use: ["style-loader", "css-loader", "postcss-loader"]
-  }
-];
-const devServer = {
-  hot: true
+module.exports = function(env) {
+  const output = {
+    path: resolve(__dirname, "../dist"),
+    filename: "js/[name].[hash:7].js",
+    publicPath: "./"
+  };
+  const rules = [
+    {
+      test: /\.css$/,
+      include: [resolve(__dirname, "../src/css")],
+      use: ["style-loader", "css-loader", "postcss-loader"]
+    },
+    {
+      test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      loader: "url-loader",
+      options: {
+        limit: 5000,
+        name: "[name].[hash:7].[ext]"
+      }
+    },
+    {
+      test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+      loader: "url-loader",
+      options: {
+        limit: 10000,
+        name: "[name].[hash:7].[ext]"
+      }
+    }
+  ];
+  const devServer = {
+    hot: true
+  };
+  const plugins = [
+    new webpack.NamedModulesPlugin(), // 用于启动 HMR 时可以显示模块的相对路径
+    new webpack.HotModuleReplacementPlugin() // Hot Module Replacement插件
+  ];
+  const config = smart(base, {
+    output,
+    module: { rules },
+    devServer,
+    plugins
+  });
 };
-const plugins = [
-  new webpack.NamedModulesPlugin(), // 用于启动 HMR 时可以显示模块的相对路径
-  new webpack.HotModuleReplacementPlugin(), // Hot Module Replacement插件
-  new HtmlWebpackPlugin({
-    filename: "index.html",
-    template: resolve(__dirname, "../src/index.html")
-  })
-];
-const config = smart(base, {
-  module: { rules },
-  devServer,
-  plugins
-});
-// config.plugins.concat(plugins);
-
-module.exports = config;

@@ -8,6 +8,8 @@ body {
   height: 100%; width: 100%; position: relative;
    .swiper-container {
     height: 100%;  width: 100%;
+    background: url(../assets/fengmian.png) no-repeat;
+    background-size: 750px 1334px;
     & > .swiper-wrapper {
       height: 100%;  width: 100%;
       & > .swiper-slide {
