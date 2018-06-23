@@ -9,6 +9,7 @@
 * 抽离公共js，css
 * 使用了webpack4+新特性
 * 使用热加载实时更新页面
+* 增加webpack-dashboard-plugins插件，方便直观显示devServer状态
 
 ### shell:
 > npm run dev
