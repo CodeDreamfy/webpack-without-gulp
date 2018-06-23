@@ -24,3 +24,10 @@ body {
     background-size: 40px 33px; z-index: 9;
   }
 }
+
+.IIV::-webkit-media-controls-play-button,
+ .IIV::-webkit-media-controls-start-playback-button {
+     opacity: 0;
+     pointer-events: none;
+     width: 5px;
+ }

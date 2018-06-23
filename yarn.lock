@@ -3649,6 +3649,10 @@ interpret@^1.1.0:
   version "1.1.0"
   resolved "http://r.cnpmjs.org/interpret/download/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
 
+intervalometer@^1.0.4:
+  version "1.0.4"
+  resolved "http://registry.npm.taobao.org/intervalometer/download/intervalometer-1.0.4.tgz#e807229ae8ac2cbf9156cc010eeb207b6e65ad23"
+
 invariant@^2.2.2:
   version "2.2.4"
   resolved "http://r.cnpmjs.org/invariant/download/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
@@ -3683,6 +3687,13 @@ ip@^1.1.0, ip@^1.1.5:
 ipaddr.js@1.6.0:
   version "1.6.0"
   resolved "http://r.cnpmjs.org/ipaddr.js/download/ipaddr.js-1.6.0.tgz#e3fa357b773da619f26e95f049d055c72796f86b"
+
+iphone-inline-video@^2.2.2:
+  version "2.2.2"
+  resolved "http://registry.npm.taobao.org/iphone-inline-video/download/iphone-inline-video-2.2.2.tgz#b5cd8d53d0c60fbcb1248cfdbbe44d36ff610fb2"
+  dependencies:
+    intervalometer "^1.0.4"
+    poor-mans-symbol "^1.0.1"
 
 is-absolute-url@^2.0.0:
   version "2.1.0"
@@ -5243,6 +5254,10 @@ pngquant-bin@^4.0.0:
     bin-wrapper "^3.0.0"
     execa "^0.10.0"
     logalot "^2.0.0"
+
+poor-mans-symbol@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/poor-mans-symbol/download/poor-mans-symbol-1.0.1.tgz#0c1b65ff1d49c07402b2235e562077d120671d0c"
 
 portfinder@^1.0.9:
   version "1.0.13"

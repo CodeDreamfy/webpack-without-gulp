@@ -5,7 +5,9 @@ Todo:
     ☐ css处理-主要是使用postcss相关插件
     ☐ 图片处理-小图片base64，大图片压缩
     ☐ 区分开发与生产 - 前缀
-
+    ☐ 工具库如何封装挂载
+    ☐ 每个页面js如何包装调用
+    ☐ 多页面引入同一个js会去重吗
 
 notes:
   `使用webpack4.0的时候extract-text-webpack-plugin应该使用@next版本`
@@ -13,3 +15,7 @@ video参考资料:
   https://zhaoda.net/2014/10/30/html5-video-optimization/
   https://developer.mozilla.org/zh-CN/docs/Web/Guide/Events/Media_events
   https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/videoz
+
+  https://x5.tencent.com/tbs/guide/video.html
+  https://aotu.io/notes/2017/01/11/mobile-video/
+  https://github.com/gnipbao/iblog/issues/11

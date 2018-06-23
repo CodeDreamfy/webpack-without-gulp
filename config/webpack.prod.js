@@ -79,6 +79,9 @@ module.exports = function(env) {
     }
   ];
   const plugins = [
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify("production")
+    }),
     new CleanWebpackPlugin(["dist"], { root: path.resolve(__dirname, "../") }),
     new ExtractTextPlugin({
       filename: "css/[name].[hash:7].css",

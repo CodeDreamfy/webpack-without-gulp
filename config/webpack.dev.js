@@ -48,9 +48,14 @@ module.exports = function(env) {
     }
   ];
   const devServer = {
-    hot: true
+    hot: true,
+    host: "0.0.0.0",
+    port: 8080
   };
   const plugins = [
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify("develop")
+    }),
     new webpack.NamedModulesPlugin(), // 用于启动 HMR 时可以显示模块的相对路径
     new webpack.HotModuleReplacementPlugin(), // Hot Module Replacement插件
     new DashboardPlugin(dashboard.setData)
