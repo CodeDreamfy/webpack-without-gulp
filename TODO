@@ -9,3 +9,7 @@ Todo:
 
 notes:
   `使用webpack4.0的时候extract-text-webpack-plugin应该使用@next版本`
+video参考资料:
+  https://zhaoda.net/2014/10/30/html5-video-optimization/
+  https://developer.mozilla.org/zh-CN/docs/Web/Guide/Events/Media_events
+  https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/videoz
