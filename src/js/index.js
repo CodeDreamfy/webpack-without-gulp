@@ -34,7 +34,6 @@ $(function() {
     event.preventDefault();
     return false;
   });
-  oSlide2.mounted();
 });
 function switchAction(index) {
   const $video = $(".slide2 .video");

@@ -1,0 +1,137 @@
+.slide4 {
+  .content-wrap {
+    top: 68px;
+  }
+  .title .text {
+    background: url(../assets/slide4/title.png) no-repeat center top;
+    background-size: 209px 49px;
+  }
+  .content-1 {
+    width: 634px; margin: 70px auto 0;
+    .ct-title {
+      text-align: center; font-size: 28px;
+      color: #3e8de5;
+    }
+    .ct-content {
+      display: flex; justify-content: space-between;
+      align-items: center;
+      margin-top: 48px;
+      &>div {
+        width: 100px; height: 100px;
+        display: flex; align-items: flex-end;
+        p { flex: 1; text-align: center; font-size: 20px; color: #fff;}
+      }
+      .ct-item1 {
+        background: url(../assets/slide4/ct-icon-1.png) no-repeat center top;
+        background-size: 68px 46px;
+      }
+      .ct-item2 {
+        background: url(../assets/slide4/ct-icon-2.png) no-repeat center top;
+        background-size: 41px 58px;
+      }
+      .ct-item3 {
+        background: url(../assets/slide4/ct-icon-3.png) no-repeat center top;
+        background-size: 30px 60px;
+      }
+      .ct-item4 {
+        background: url(../assets/slide4/ct-icon-4.png) no-repeat center top;
+        background-size: 49px 61px;
+      }
+      .ct-item5 {
+        background: url(../assets/slide4/ct-icon-5.png) no-repeat center top;
+        background-size: 49px 49px;
+      }
+    }
+  }
+  .content-2 {
+    width: 696px; margin: 32px auto 0;
+    .ct-title {
+      width: 150px; height: 64px; margin: 0 auto;
+      background: url(../assets/slide4/ct-tit-bg.png) no-repeat;
+      background-size: 150px 64px;
+      font-size: 28px; color: #3e8de5;
+      line-height: 64px; text-align: center;
+    }
+    .ct-content {
+      margin-top: 54px;
+      display: flex; justify-content: space-between;
+      align-items: center; height: 22px;
+      &>span {
+        padding-left: 26px; font-size: 20px;
+        color: #fff; height: 22px; line-height: 22px;
+        background: url(../assets/slide4/ct-icon2.png) no-repeat left 2px;
+        background-size: 16px 18px;
+      }
+    }
+  }
+  .content-3 {
+    width: 696px; margin: 30px auto 0; position: relative;
+    display: flex; justify-content: space-between;
+    .ct-left {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center;
+      .ct-tit-left {
+        width: 230px; height: 64px;
+        background: url(../assets/slide4/ct-tit-bg2.png) no-repeat center center;
+        background-size: 230px 64px;
+        line-height: 64px; font-size: 24px; color: #3e8de5;
+        text-align: center;
+      }
+      .clound {
+        width: 249px; height: 147px; margin-top: 72px;
+        background: url(../assets/slide4/he-clound.png) no-repeat center center;
+        background-size: 249px 147px;
+      }
+      .clound-arrow {
+        width: 26px; height: 44px; margin-top: 26px;
+        background: url(../assets/slide4/ct-arrow-1.png) no-repeat center center;
+        background-size: 26px 44px;
+      }
+      .clound-text {
+        margin-top: 28px; flex: 1;
+        .clound-tit {
+          font-size: 20px; color: #bbb; text-align: center;
+        }
+        & > p {
+          margin-top: 15px; line-height: 30px;
+          font-size: 14px; color: #666; text-align: center;
+        }
+      }
+    }
+    .ct-right {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center;
+      .ct-tit-right {
+        width: 150px; height: 64px;
+        background: url(../assets/slide4/ct-tit-bg.png) no-repeat;
+        background-size: 150px 64px;
+        line-height: 64px; font-size: 24px; color: #3e8de5;
+        text-align: center; 
+      }
+      .phone-wrap {
+        width: 92px; height: 192px;
+        background: url(../assets/slide4/phone.png) no-repeat;
+        background-size: 92px 192px;
+        margin-top: 50px;
+      }
+      .phone-txt {
+        font-size: 20px; color: #bbb;
+        margin-top: 18px;
+      }
+    }
+    .ct3-arrow {
+      width: 26px; height: 16px;
+      position: absolute; 
+      left: 367px; top: 202px;
+      transform: rotate(-90deg);
+      background: url(../assets/slide4/icon-arrow.png) no-repeat;
+      background-size: 26px 16px; 
+    }
+  }
+  .ct-arrow {
+    margin: 40px auto;
+    width: 26px; height: 16px;
+    background: url(../assets/slide4/icon-arrow.png) no-repeat;
+    background-size: 26px 16px;
+  }
+}

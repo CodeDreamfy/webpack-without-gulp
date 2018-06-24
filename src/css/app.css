@@ -2,6 +2,11 @@
 @import '../../node_modules/swiper/dist/css/swiper.min.css';
 @import './lib/reset.css';
 @import './lib/common.css';
-
 @import './module/slide1.css';
 @import './module/slide2.css';
+@import './module/slide3.css';
+@import './module/slide4.css';
+@import './module/slide5.css';
+@import './module/slide6.css';
+@import './module/slide7.css';
+@import './module/slide8.css';
