@@ -53,15 +53,13 @@ textarea {
 	-webkit-tap-highlight-color: transparent;
 }
 
-
 html {
-  box-sizing: border-box;
   font-family:  -apple-system,"Helvetica Neue", Arial, SimSun,sans-serif;
 	line-height: 1;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html,body {

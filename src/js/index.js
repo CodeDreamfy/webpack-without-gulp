@@ -1,18 +1,25 @@
+import oSlide1 from "./module/slide1";
 import oSlide2 from "./module/slide2";
+import oSlide5 from "./module/slide5";
 import utils from "./utils/index";
+
 window.utils = utils;
 $(function() {
   const globalSwiper = new Swiper("#globalSwiper", {
     direction: "vertical",
-    // initialSlide: 1,
+    // initialSlide: 5,
     on: {
       slideChange() {
         switchAction(this.activeIndex);
+      },
+      init() {
+        oSlide1.mounted();
+        oSlide2.mounted();
+        oSlide5.mounted();
       }
-    },
-    init() {}
+    }
   });
-  oSlide2.mounted();
+
   const video = document.querySelector("video");
 
   document.addEventListener(
@@ -38,7 +45,7 @@ $(function() {
 function switchAction(index) {
   const $video = $(".slide2 .video");
   switch (index) {
-    case 1:
+    case 2:
       if ($video.length != 0) {
         oSlide2.play();
       }

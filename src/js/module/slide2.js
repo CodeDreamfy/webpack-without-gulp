@@ -3,7 +3,7 @@ export default {
   name: "slide2",
   mounted() {
     const videoElem = $(
-      '<video width="1" height="1" webkit-playsinline playsinline autobuffer preload autoplay></video>'
+      '<video width="1" height="1" webkit-playsinline playsinline autobuffer preload ></video>' // autoplay
     );
     const video = videoElem.get(0);
     this.video = video;
