@@ -52,14 +52,18 @@
       background-size: 258px 322px;
     }
     .line1 {
-      position: absolute; top: 129px; left: 209px;
-      width: 161px; height: 69px;
-      background: url(../assets/slide3/line-1.png) no-repeat;
-      background-size: 161px 69px;
+      position: absolute; top: 80px; left: 300px;
+      width: 127px; height: 97px;
+      transform: rotate(62deg);
+      transform-origin: 0 0;
+      background: url(../assets/slide3/line-2.png) no-repeat;
+      background-size: 127px 97px;
     }
     .line2 {
-      position: absolute; top: 307px; left: 247px;
+      position: absolute; top: 410px; left: 364px;
       width: 127px; height: 97px;
+      transform: rotate(-180deg);
+      transform-origin: 0 0;
       background: url(../assets/slide3/line-2.png) no-repeat;
       background-size: 127px 97px;
     }

@@ -9,12 +9,11 @@
     background-size: 209px 49px;
   }
   .content1 {
-    height: 1032px; margin-top: 52px;
+    height: 1032px; margin-top: 18px;
     position: relative;
     .cont-output {
       width: 538px; height: 736px;
-      position: absolute;
-      top: 92px; left: 74px;
+      position: absolute; top: 72px; left: 74px;
       .ct-center {
         position: absolute; top: 280px; left: 245px;
         width: 76px; height: 100px; padding-top: 64px;
@@ -26,18 +25,23 @@
       }
       .ct-diangong {
         position: absolute; top: 0; right: 40px; 
+        width: 100px; height: 124px;
       }
       .ct-huanjing {
         position: absolute; top: 102px; left: 0; 
+        width: 100px; height: 124px;
       }
       .ct-anfang {
         position: absolute; left: 66px; bottom: 178px;  
+        width: 100px; height: 124px;
       }
       .ct-jiadian {
         position: absolute; right: 0; bottom: 260px;  
+        width: 100px; height: 124px;
       }
       .ct-chuandai{
         position: absolute; right: 118px; bottom: 0; 
+        width: 100px; height: 124px;
       }
       
       .diangong {
@@ -121,7 +125,7 @@
         background-size: 217px 277px;
       }
       .tip-jiadian {
-        width: 230px; height: 348px;
+        width: 230px; height: 348px; display: none;
         position: absolute; top: 44px; left: -10px; z-index: 1;
         background: url(../assets/slide5/tip-jiadian.png) no-repeat center top;
         background-size: 230px 348px;

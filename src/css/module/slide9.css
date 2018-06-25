@@ -7,7 +7,7 @@
     background-size: 209px 49px;
   }
   .cont-1 {
-    width: 630px; padding-left: 40px; margin: 50px auto;
+    width: 630px; padding-left: 40px; margin: 30px auto;
     &>p {
       font-size: 30px; color: #2e5aab;
       line-height: 36px;
@@ -35,15 +35,15 @@
     }
   }
   .cont-3 {
-    width: 530px; height: 100px; margin: 116px auto;
-    display: flex; align-items: center;
+    width: 540px; height: 100px; margin: 66px auto;
+    display: flex; align-items: center; justify-content: space-between;
     &>span {
       width: 104px; height: 100px;
       background: url(../assets/slide9/phone-icon.png) no-repeat left center;
       background-size: 82px 82px;
     }
     .cont {
-      display: flex; flex: 0 0 1;
+      display: flex; flex: 1;
       flex-direction: column; height: 100px;
       justify-content: center;
       p {
@@ -55,7 +55,7 @@
     }
   }
   .apply-btn {
-    width: 250px; height: 70px; margin: 70px auto; display: block;
+    width: 250px; height: 70px; margin: 30px auto; display: block;
     background: url(../assets/slide9/shenqing.png) no-repeat left center;
     background-size: 250px 70px;
   }
