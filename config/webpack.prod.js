@@ -1,13 +1,14 @@
 const { smart } = require("webpack-merge");
 const base = require("./webpack.base");
 const path = require("path");
+const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const resolve = path.resolve;
 const signale = require("signale");
 
 module.exports = function(env) {
-  const assetsPath = env == "productionRelease" ? "/src/h5/xxx/dist" : "./";
+  const assetsPath = env == "productionRelease" ? "/src/h5/hewu-h5/dist" : "./";
   signale.success(env, "productionRelease", assetsPath);
   const output = {
     path: resolve(__dirname, "../dist"),

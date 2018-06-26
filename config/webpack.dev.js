@@ -3,9 +3,9 @@ const webpack = require("webpack");
 const base = require("./webpack.base");
 const path = require("path");
 const resolve = path.resolve;
-const Dashboard = require("webpack-dashboard");
-const DashboardPlugin = require("webpack-dashboard/plugin");
-const dashboard = new Dashboard();
+// const Dashboard = require("webpack-dashboard");
+// const DashboardPlugin = require("webpack-dashboard/plugin");
+// const dashboard = new Dashboard();
 
 module.exports = function(env) {
   const output = {
@@ -57,8 +57,8 @@ module.exports = function(env) {
       NODE_ENV: JSON.stringify("develop")
     }),
     new webpack.NamedModulesPlugin(), // 用于启动 HMR 时可以显示模块的相对路径
-    new webpack.HotModuleReplacementPlugin(), // Hot Module Replacement插件
-    new DashboardPlugin(dashboard.setData)
+    new webpack.HotModuleReplacementPlugin() // Hot Module Replacement插件
+    // new DashboardPlugin(dashboard.setData)
   ];
   const config = smart(base, {
     output,
