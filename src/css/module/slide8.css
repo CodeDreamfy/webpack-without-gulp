@@ -7,7 +7,7 @@
     background-size: 209px 49px;
   }
   .cont-1 {
-    width: 78px; margin: 54px auto;
+    width: 78px; margin: 34px auto;
     .item {
       width: 78px; height: 78px;
       position: relative;
@@ -63,14 +63,11 @@
       width: 6px; margin: 0 auto; display: block;
       background: url(../assets/slide8/line.png) no-repeat center top;
       background-size: 6px 122px;
-      &.line1, &.line3 {
+      &.line1, &.line3, &.line4 {
         height: 112px;
       }
       &.line2 {
         height: 104px;
-      }
-      &.line4 {
-        height: 122px;
       }
     }
   }

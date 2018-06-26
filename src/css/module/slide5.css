@@ -18,86 +18,103 @@
         position: absolute; top: 280px; left: 245px;
         width: 76px; height: 100px; padding-top: 64px;
         background: url(../assets/slide5/center-bg.png) no-repeat center top;
-        background-size: 65px 52px;
+        background-size: 65px 52px; z-index: 9;
         p { 
-          font-size: 26px; color: #a5a5a5; text-align: center;
+          font-size: 26px; color: #a5a5a5; text-align: center;position: relative;
         }
       }
+      .ct-lay {
+        position: absolute;
+      }
       .ct-diangong {
-        position: absolute; top: 0; right: 40px; 
+        top: 0; right: 40px; 
         width: 100px; height: 124px;
       }
       .ct-huanjing {
-        position: absolute; top: 102px; left: 0; 
+        top: 102px; left: 0; 
         width: 100px; height: 124px;
       }
       .ct-anfang {
-        position: absolute; left: 66px; bottom: 178px;  
+        left: 66px; bottom: 178px;  
         width: 100px; height: 124px;
       }
       .ct-jiadian {
-        position: absolute; right: 0; bottom: 260px;  
         width: 100px; height: 124px;
+        right: 0; bottom: 260px;  
       }
       .ct-chuandai{
-        position: absolute; right: 118px; bottom: 0; 
+        right: 118px; bottom: 0; 
         width: 100px; height: 124px;
-      }
-      
-      .diangong {
-        background: url(../assets/slide5/ct-bg-diangong.png) no-repeat center top;
-        background-size: 78px 91px;
-      }
-      .huanjing {
-        background: url(../assets/slide5/ct-bg-huanjing.png) no-repeat center top;
-        background-size: 78px 91px;
-      }
-      .anfang {
-        background: url(../assets/slide5/ct-bg-anfang.png) no-repeat center top;
-        background-size: 78px 91px;
-      }
-      .chuandai {
-        background: url(../assets/slide5/ct-bg-chuandai.png) no-repeat center top;
-        background-size: 78px 91px;
-      }
-      .jiadian {
-        background: url(../assets/slide5/ct-bg-jiadian.png) no-repeat center top;
-        background-size: 78px 91px;
-      }
-      .ct-line1 {
-        width: 145px; top: -78px; right: -100px;
-        transform: rotate(-56deg);
-      }
-      .ct-line2 {
-        width: 174px; top: -55px; left: -160px;
-        transform: rotate(-144deg);
-      }
-      .ct-line3 {
-        width: 134px; bottom: -22px; left: -110px;
-        transform: rotate(129deg);
-        transform-origin: center center;
-      }
-      .ct-line4 {
-        width: 240px; bottom: -100px; left: -30px;
-        transform: rotate(76deg);
-      }
-      .ct-line5 {
-        width: 96px; top: 70px; right: -100px;
-        transform: rotate(24deg);
-      }
-      .ct-line {
-        height: 1px; position: absolute;
-        &::before {
-          content: ''; display: block;
-          height: 1px; width: 100%;
-          background: #3e8de5;
-        }
       }
       .ct-out-item {
         width: 100px; height: 124px; position: relative; z-index: 2;
         display: flex; justify-content: center; align-items: flex-end;
         &>p {
           font-size: 22px; color: #3e8de5; text-align: center;
+        }
+        &.diangong {
+          background: url(../assets/slide5/ct-bg-diangong.png) no-repeat center top;
+          background-size: 78px 91px;
+        }
+        &.huanjing {
+          background: url(../assets/slide5/ct-bg-huanjing.png) no-repeat center top;
+          background-size: 78px 91px;
+        }
+        &.anfang {
+          background: url(../assets/slide5/ct-bg-anfang.png) no-repeat center top;
+          background-size: 78px 91px;
+        }
+        &.chuandai {
+          background: url(../assets/slide5/ct-bg-chuandai.png) no-repeat center top;
+          background-size: 78px 91px;
+        }
+        &.jiadian {
+          background: url(../assets/slide5/ct-bg-jiadian.png) no-repeat center top;
+          background-size: 78px 91px;
+        }
+      }
+      .line > i{ 
+        position: absolute; background: #3e8de5; height: 2px;
+        transform-origin: 0 0;
+      }
+      .line1 {
+        width: 80px; height: 128px; position: absolute;
+        top: -138px; right: -70px;
+        i {
+          width: 145px; bottom: 0; left: 0;
+          transform: rotate(-58deg);
+        }
+      }
+      .line2 {
+        width: 144px; height: 94px; position: absolute;
+        top: -102px; left: -146px;
+        i {
+          width: 166px; left: 140px; bottom: 0;
+          transform: rotate(-146deg);
+        }
+      }
+      .line3 {
+        width: 90px; height: 105px; position: absolute;
+        bottom: -65px; left: -90px; 
+        i {
+          width: 136px; left: 90px; top: 0;
+          transform: rotate(130deg);
+        }
+      }
+      .line4 {
+        width: 58px; height: 242px; position: absolute;
+        bottom: -222px; left: 60px;
+        i {
+          width: 247px; left: 0; top: 0;
+          transform: rotate(76deg);
+        }
+      }
+      .line5 {
+        width: 94px; height: 42px; position: absolute;
+        bottom: 10px; left: 100px;
+        i {
+          width: 95px; left: 0; top: 0;
+          transform: rotate(24deg);
         }
       }
       .tip-diangong {
@@ -134,5 +151,6 @@
         display: block;
       }
     }
+    
   }
 }

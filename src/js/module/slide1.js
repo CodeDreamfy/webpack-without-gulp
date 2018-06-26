@@ -1,35 +1,36 @@
 export default {
   mounted() {
-    const $imgb = $('.imgb');
-    const $imgt = $('.imgt');
-    const $firstTit = $('.first-title');
-    const $hewuLogo = $('.hewu-logo');
-    const $chinaLogo = $('.logo');
+    const $imgb = $(".imgb");
+    const $imgt = $(".imgt");
+    const $firstTit = $(".first-title");
+    const $hewuLogo = $(".hewu-logo");
+    const $chinaLogo = $(".logo");
 
     var tl = new TimelineLite();
-    tl.from([$imgb, $imgt], 1.8, {
-      opacity: 0,
-      scaleX: 0.8,
-      scaleY: 0.8,
-    })
-      .addLabel('rotation')
+    tl
+      .from([$imgb, $imgt], 1.8, {
+        opacity: 0,
+        scaleX: 0.8,
+        scaleY: 0.8
+      })
+      .addLabel("rotation")
       .from(
         $imgb,
         10,
         {
           rotation: 360,
-          repeat: -1,
+          repeat: -1
         },
-        'rotation',
+        "rotation"
       )
       .from(
         $imgt,
         10,
         {
           rotation: -360,
-          repeat: -1,
+          repeat: -1
         },
-        'rotation',
+        "rotation"
       );
     tl.from(
       $firstTit,
@@ -37,18 +38,18 @@ export default {
       {
         opacity: 0,
         scaleX: 0.8,
-        scaleY: 0.8,
+        scaleY: 0.8
       },
-      'rotation',
+      "rotation"
     );
     tl.from(
       $hewuLogo,
       2,
       {
         opacity: 0,
-        y: -60,
+        y: -60
       },
-      'rotation',
+      "rotation"
     );
     tl.from(
       $chinaLogo,
@@ -56,8 +57,11 @@ export default {
       {
         opacity: 0,
         y: -40,
+        onComplete() {
+          $(".g-arrow").addClass("active");
+        }
       },
-      'rotation',
+      "rotation"
     );
-  },
+  }
 };

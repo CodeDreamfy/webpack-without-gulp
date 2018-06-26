@@ -1,24 +1,35 @@
-import { TimelineLite } from 'gsap/TweenMax';
-import oSlide1 from './module/slide1';
-import oSlide2 from './module/slide2';
-import oSlide3 from './module/slide3';
-import oSlide4 from './module/slide4';
-import oSlide5 from './module/slide5';
-import oSlide6 from './module/slide6';
-import oSlide7 from './module/slide7';
-import oSlide8 from './module/slide8';
-import oSlide9 from './module/slide9';
-import utils from './utils/index';
+import { TimelineLite } from "gsap/TweenMax";
+import oSlide1 from "./module/slide1";
+import oSlide2 from "./module/slide2";
+import oSlide3 from "./module/slide3";
+import oSlide4 from "./module/slide4";
+import oSlide5 from "./module/slide5";
+import oSlide6 from "./module/slide6";
+import oSlide7 from "./module/slide7";
+import oSlide8 from "./module/slide8";
+import oSlide9 from "./module/slide9";
+import utils from "./utils/index";
 
 window.utils = utils;
 window.TimelineLite = TimelineLite;
+let lastIndex = false;
 $(function() {
-  const globalSwiper = new Swiper('#globalSwiper', {
-    direction: 'vertical',
-    // initialSlide: 3,
+  const globalSwiper = new Swiper("#globalSwiper", {
+    direction: "vertical",
+    // initialSlide: 5,
     on: {
       slideChange() {
         switchAction(this.activeIndex);
+      },
+      slideChangeTransitionEnd() {
+        if (this.isEnd) {
+          if (!lastIndex) {
+            lastIndex = true;
+          } else {
+            this.slideTo(0);
+            lastIndex = false;
+          }
+        }
       },
       init() {
         oSlide1.mounted();
@@ -29,35 +40,35 @@ $(function() {
         oSlide7.mounted();
         oSlide8.mounted();
         oSlide9.mounted();
-      },
-    },
+      }
+    }
   });
   oSlide2.mounted();
 
-  const video = document.querySelector('video');
+  const video = document.querySelector("video");
 
   document.addEventListener(
-    'WeixinJSBridgeReady',
+    "WeixinJSBridgeReady",
     function() {
       video.play();
-      $('.slide2').removeClass('first-bg');
+      $(".slide2").removeClass("first-bg");
       video.pause();
-      video.addEventListener('ended', function(e) {
+      video.addEventListener("ended", function(e) {
         // 播放结束时触发
         if (utils.isiOS) {
           globalSwiper.slideTo(2);
         }
       });
     },
-    false,
+    false
   );
-  $('img').on('click', function(event) {
+  $("img").on("click", function(event) {
     event.preventDefault();
     return false;
   });
 });
 function switchAction(index) {
-  const $video = $('.slide2 .video');
+  const $video = $(".slide2 .video");
   if ($video.length != 0) {
     oSlide2.pause();
   }
@@ -89,23 +100,23 @@ function lazyLoadImg() {
   const imgInfo = [
     {
       url: `./assets/slide0/indexbg.jpg`,
-      class: `first-screen-bg`,
+      class: `first-screen-bg`
     },
     {
       url: `./assets/logo.png`,
-      class: 'logo',
+      class: "logo"
     },
     {
       url: `./assets/slide0/i-1.png`,
-      class: 'imgb iimg',
+      class: "imgb iimg"
     },
     {
       url: `./assets/slide0/i-2.png`,
-      class: 'imgt iimg',
+      class: "imgt iimg"
     },
     {
       url: `./assets/hewu.png`,
-      class: 'hewu-logo',
-    },
+      class: "hewu-logo"
+    }
   ];
 }
