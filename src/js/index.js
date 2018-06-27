@@ -9,14 +9,17 @@ import oSlide7 from "./module/slide7";
 import oSlide8 from "./module/slide8";
 import oSlide9 from "./module/slide9";
 import utils from "./utils/index";
+import configShareConfig from "./utils/share";
 
 window.utils = utils;
 window.TimelineLite = TimelineLite;
 let lastIndex = false;
-$(function() {
+$(function () {
+  oSlide2.mounted();
   const globalSwiper = new Swiper("#globalSwiper", {
     direction: "vertical",
-    // initialSlide: 5,
+    keyboard: true,
+    // initialSlide: 8,
     on: {
       slideChange() {
         switchAction(this.activeIndex);
@@ -40,44 +43,46 @@ $(function() {
         oSlide7.mounted();
         oSlide8.mounted();
         oSlide9.mounted();
+        configShareConfig();
       }
     }
   });
-  oSlide2.mounted();
 
-  const video = document.querySelector("video");
+
 
   document.addEventListener(
     "WeixinJSBridgeReady",
-    function() {
+    function () {
+      const video = document.querySelector("video");
       video.play();
-      $(".slide2").removeClass("first-bg");
       video.pause();
-      video.addEventListener("ended", function(e) {
+      $(".slide2").removeClass("first-bg");
+      video.addEventListener("ended", function (e) {
         // 播放结束时触发
-        if (utils.isiOS) {
+        if (utils.isiOS()) {
           globalSwiper.slideTo(2);
         }
       });
     },
     false
   );
-  $("img").on("click", function(event) {
+  $("img").on("click", function (event) {
     event.preventDefault();
     return false;
   });
 });
 function switchAction(index) {
   const $video = $(".slide2 .video");
+  const video = document.querySelector("video");
   if ($video.length != 0) {
-    oSlide2.pause();
+    video.pause();
   }
   switch (index) {
     case 0:
       break;
     case 2:
       if ($video.length != 0) {
-        oSlide2.play();
+        video.play();
       }
       break;
     case 1:

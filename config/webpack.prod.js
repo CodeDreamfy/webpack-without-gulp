@@ -34,8 +34,10 @@ module.exports = function(env) {
       include: [resolve(__dirname, "../src/css")],
       use: ExtractTextPlugin.extract({
         fallback: "style-loader",
-        use: ["css-loader", "postcss-loader"]
+        use: ["css-loader", "postcss-loader"],
+        publicPath: env == "productionRelease" ? "/scy/h5/hewu-h5/dist/" : "/"
       })
+      // use: ["style-loader", "css-loader", "postcss-loader"]
     },
     {
       test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -45,27 +47,9 @@ module.exports = function(env) {
           loader: "url-loader",
           options: {
             limit: 8192,
-            name: "/assets/[name].[hash:7].[ext]"
-          }
-        },
-        {
-          loader: "image-webpack-loader",
-          options: {
-            mozjpeg: {
-              progressive: true,
-              quality: 65
-            },
-            optipng: { enabled: false },
-            pngquant: {
-              quality: "65-90",
-              speed: 4
-            },
-            gifsicle: {
-              interlaced: false
-            },
-            webp: {
-              quality: 75
-            }
+            name: "assets/[name].[hash:7].[ext]",
+            publicPath:
+              env == "productionRelease" ? "/scy/h5/hewu-h5/dist/" : "/"
           }
         }
       ]
@@ -80,13 +64,12 @@ module.exports = function(env) {
     }
   ];
   const plugins = [
+    new CleanWebpackPlugin(["dist"], { root: path.resolve(__dirname, "../") }),
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify("production")
     }),
-    new CleanWebpackPlugin(["dist"], { root: path.resolve(__dirname, "../") }),
     new ExtractTextPlugin({
-      filename: "css/[name].[hash:7].css",
-      publicPath: assetsPath
+      filename: "css/[name].[hash:7].css"
     })
   ];
   return smart(base, {
