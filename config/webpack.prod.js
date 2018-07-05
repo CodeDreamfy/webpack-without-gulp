@@ -70,16 +70,16 @@ module.exports = function(env) {
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify("production")
     }),
-    new CopyWebpackPlugin([{ from: "src/js/lib/", to: "../dist/js/lib/" }]),
-    new HtmlWebpackIncludeAssetsPlugin({
-      assets: [
-        "js/lib/swiper-4.3.3.min.css",
-        "js/lib/jquery-1.11.3.min.js",
-        "js/lib/swiper-4.3.3.min.js"
-      ],
-      append: false,
-      publicPath: assetsPath
-    }),
+    // new CopyWebpackPlugin([{ from: "src/js/lib/", to: "../dist/js/lib/" }]),
+    // new HtmlWebpackIncludeAssetsPlugin({
+    //   assets: [
+    //     "js/lib/swiper-4.3.3.min.css",
+    //     "js/lib/jquery-1.11.3.min.js",
+    //     "js/lib/swiper-4.3.3.min.js"
+    //   ],
+    //   append: false,
+    //   publicPath: assetsPath
+    // }),
     new ExtractTextPlugin({
       filename: "css/[name].[hash:7].css"
     })
