@@ -1,17 +1,10 @@
 import { TimelineLite } from "gsap/TweenMax";
-
 import utils from "./utils/index";
-import configShareConfig from "./utils/share";
 
 window.utils = utils;
 window.TimelineLite = TimelineLite;
-let lastIndex = false;
-$(function() {
-  const globalSwiper = new Swiper("#globalSwiper", {
-    direction: "vertical",
-    keyboard: true
-  });
 
+$(function() {
   document.addEventListener(
     "WeixinJSBridgeReady",
     function() {
