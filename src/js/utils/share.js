@@ -5,17 +5,17 @@ function configShareConfig() {
   }
 
   $.ajax({
-    type: 'post',
-    url: '/scy/hewu-h5/getWxConf',
+    type: "post",
+    url: "/scy/hewu-h5/getWxConf",
     data: { url: href },
-    success: function (res) {
+    success: function(res) {
       let o;
-      if (typeof res === 'string') {
+      if (typeof res === "string") {
         o = JSON.parse(res).data;
       } else {
         o = res.data;
       }
-      console.log("weixin：", o)
+      console.log("weixin：", o);
       wx.config({
         debug: false, // 正式需要关闭
         appId: o.appId,
@@ -23,43 +23,43 @@ function configShareConfig() {
         nonceStr: o.nonceStr,
         signature: o.signature,
         jsApiList: [
-          'checkJsApi',
-          'onMenuShareTimeline',
-          'onMenuShareAppMessage',
-          'onMenuShareQQ',
-          'onMenuShareWeibo',
-          'onMenuShareQZone',
-          'hideMenuItems',
-          'showMenuItems',
-          'hideAllNonBaseMenuItem',
-          'showAllNonBaseMenuItem',
-          'translateVoice',
-          'startRecord',
-          'stopRecord',
-          'onVoiceRecordEnd',
-          'playVoice',
-          'onVoicePlayEnd',
-          'pauseVoice',
-          'stopVoice',
-          'uploadVoice',
-          'downloadVoice',
-          'chooseImage',
-          'previewImage',
-          'uploadImage',
-          'downloadImage',
-          'getNetworkType',
-          'openLocation',
-          'getLocation',
-          'hideOptionMenu',
-          'showOptionMenu',
-          'closeWindow',
-          'scanQRCode',
-          'chooseWXPay',
-          'openProductSpecificView',
-          'addCard',
-          'chooseCard',
-          'openCard',
-        ],
+          "checkJsApi",
+          "onMenuShareTimeline",
+          "onMenuShareAppMessage",
+          "onMenuShareQQ",
+          "onMenuShareWeibo",
+          "onMenuShareQZone",
+          "hideMenuItems",
+          "showMenuItems",
+          "hideAllNonBaseMenuItem",
+          "showAllNonBaseMenuItem",
+          "translateVoice",
+          "startRecord",
+          "stopRecord",
+          "onVoiceRecordEnd",
+          "playVoice",
+          "onVoicePlayEnd",
+          "pauseVoice",
+          "stopVoice",
+          "uploadVoice",
+          "downloadVoice",
+          "chooseImage",
+          "previewImage",
+          "uploadImage",
+          "downloadImage",
+          "getNetworkType",
+          "openLocation",
+          "getLocation",
+          "hideOptionMenu",
+          "showOptionMenu",
+          "closeWindow",
+          "scanQRCode",
+          "chooseWXPay",
+          "openProductSpecificView",
+          "addCard",
+          "chooseCard",
+          "openCard"
+        ]
       });
       wx.ready(() => {
         //eslint-disable-next-line
@@ -76,7 +76,7 @@ function configShareConfig() {
         shareAll();
       });
       //eslint-disable-next-line
-      wx.error((res) => {
+      wx.error(res => {
         //eslint-disable-next-line
         console.log(res);
       });
@@ -84,12 +84,12 @@ function configShareConfig() {
   });
   function shareAll() {
     var now = +new Date();
-    const imgurl = require('../../assets/share.png');
+    const imgurl = require("../../assets/share.png");
     const o = {
-      title: '和物集结号！十万模组补贴计划',
-      desc: '和物集结号！十万模组补贴计划',
+      title: "",
+      desc: "",
       link: location.href,
-      imgOrigin: imgurl,
+      imgOrigin: imgurl
     };
     wx.onMenuShareTimeline({
       title: o.title,
@@ -99,23 +99,23 @@ function configShareConfig() {
         // cb();
       },
       cancel() {
-        console.log('share cancel');
-      },
+        console.log("share cancel");
+      }
     });
     wx.onMenuShareAppMessage({
       title: o.title,
       desc: o.desc,
       link: o.link,
       imgUrl: location.origin + o.imgOrigin,
-      type: 'link',
-      dataUrl: '',
+      type: "link",
+      dataUrl: "",
       success() {
         // cb();
-        console.log('share success', location.origin + o.imgOrigin);
+        console.log("share success", location.origin + o.imgOrigin);
       },
       cancel() {
-        console.log('share cancel');
-      },
+        console.log("share cancel");
+      }
     });
     wx.onMenuShareQQ({
       title: o.title,
@@ -127,7 +127,7 @@ function configShareConfig() {
       },
       cancel() {
         // 用户取消分享后执行的回调函数
-      },
+      }
     });
     wx.onMenuShareQZone({
       title: o.title,
@@ -139,7 +139,7 @@ function configShareConfig() {
       },
       cancel() {
         // 用户取消分享后执行的回调函数
-      },
+      }
     });
   }
 }
