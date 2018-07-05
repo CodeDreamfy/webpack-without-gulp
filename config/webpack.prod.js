@@ -6,9 +6,12 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const resolve = path.resolve;
 const signale = require("signale");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackIncludeAssetsPlugin = require("html-webpack-include-assets-plugin");
 
 module.exports = function(env) {
-  const assetsPath = env == "productionRelease" ? "/src/h5/hewu-h5/dist" : "./";
+  const assetsPath =
+    env == "productionRelease" ? "/scy/h5/hewu-h5/dist/" : "./";
   signale.success(env, "productionRelease", assetsPath);
   const output = {
     path: resolve(__dirname, "../dist"),
@@ -23,8 +26,8 @@ module.exports = function(env) {
         {
           loader: "html-loader",
           options: {
-            attrs: ["img:src", "video:src"],
-            root: path.resolve(__dirname, assetsPath + "/assets")
+            attrs: ["img:src", "video:src"]
+            // root: path.resolve(__dirname, assetsPath + "/assets")
           }
         }
       ]
@@ -37,7 +40,6 @@ module.exports = function(env) {
         use: ["css-loader", "postcss-loader"],
         publicPath: env == "productionRelease" ? "/scy/h5/hewu-h5/dist/" : "/"
       })
-      // use: ["style-loader", "css-loader", "postcss-loader"]
     },
     {
       test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -67,6 +69,16 @@ module.exports = function(env) {
     new CleanWebpackPlugin(["dist"], { root: path.resolve(__dirname, "../") }),
     new webpack.DefinePlugin({
       NODE_ENV: JSON.stringify("production")
+    }),
+    new CopyWebpackPlugin([{ from: "src/js/lib/", to: "../dist/js/lib/" }]),
+    new HtmlWebpackIncludeAssetsPlugin({
+      assets: [
+        "js/lib/swiper-4.3.3.min.css",
+        "js/lib/jquery-1.11.3.min.js",
+        "js/lib/swiper-4.3.3.min.js"
+      ],
+      append: false,
+      publicPath: assetsPath
     }),
     new ExtractTextPlugin({
       filename: "css/[name].[hash:7].css"

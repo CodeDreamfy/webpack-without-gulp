@@ -30,12 +30,6 @@ const rules = [
   }
 ];
 const plugins = [
-  new webpack.ProvidePlugin({
-    // identifier: ["module", "default"],
-    $: "jquery",
-    jQuery: "jquery",
-    Swiper: ["swiper", "default"]
-  }),
   new HtmlWebpackPlugin({
     filename: "index.html",
     template: resolve(__dirname, "../src/index.html")
